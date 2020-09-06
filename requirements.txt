@@ -118,6 +118,7 @@ pyobjc-framework-VideoToolbox==6.2.2
 pyobjc-framework-Vision==6.2.2
 pyobjc-framework-WebKit==6.2.2
 pyparsing==2.4.7
+pytesseract==0.3.6
 python-bidi==0.4.2
 python-dateutil==2.8.1
 pyttsx3==2.90
