@@ -16,11 +16,10 @@ def audify():
     np_arr = np.fromstring(request.data, np.uint8)
     img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
     
-    full_text = pytesseract.image_to_string(img)
-    print (full_text)
-    
+    full_text = pytesseract.image_to_string(img) # OCR
+        
     random_id = "".join([str(np.random.randint(0, 9)) for i in range(8)])
-    tts = gtts.gTTS(full_text)
+    tts = gtts.gTTS(full_text) # TTS
     
     path_to_file = "./all_recordings/recording_{}.mp3".format(random_id)
     tts.save(path_to_file)

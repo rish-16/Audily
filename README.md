@@ -14,3 +14,7 @@ Or simply, run `setup.sh` in your terminal:
 ```bash
 sh setup.sh
 ```
+
+## License
+
+[MIT](https://github.com/rish-16/Audily/blob/master/LICENSE)
