@@ -1,8 +1,8 @@
-from flask import Flask, Response
+from flask import Flask, Response, request
 from flask import send_file
 
-import gtts, random, pytesseract
-from playsound import playsound
+import gtts, pytesseract, cv2
+import numpy as np
 from PIL import Image
 
 app = Flask(__name__)
@@ -11,13 +11,15 @@ app = Flask(__name__)
 def hello():
     return "Welcome to the Audily API!"
     
-@app.route('audify')    
+@app.route('/audify', methods=['POST'])
 def audify():
-    img = flask.request.files.get('imagefile', '')
+    np_arr = np.fromstring(request.data, np.uint8)
+    img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+    
     full_text = pytesseract.image_to_string(img)
     print (full_text)
     
-    random_id = "".join([str(random.randint(0, 9)) for i in range(8)])
+    random_id = "".join([str(np.random.randint(0, 9)) for i in range(8)])
     tts = gtts.gTTS(full_text)
     
     path_to_file = "./all_recordings/recording_{}.mp3".format(random_id)
