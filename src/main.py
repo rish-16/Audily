@@ -30,3 +30,6 @@ def audify():
             as_attachment=True, 
             attachment_filename="recording_{}.mp3".format(random_id)
         )
+        
+if __name__ == "__main__":
+    app.run(debug=True)
