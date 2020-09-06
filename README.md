@@ -1,5 +1,5 @@
 # Audily
-📑🤖 Convert PDFs to Audiobooks with a click!
+📑🤖 Convert PDF scans to Audiobooks with a click!
 
 ## Setup
 You can test Audily on your local system by installing the necessary packages. You must have `pip` and `brew` (Homebrew) installed:
