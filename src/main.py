@@ -1,7 +1,7 @@
 from flask import Flask, Response, request
 from flask import send_file
 
-import os,  gtts, pytesseract, cv2
+import os, gtts, pytesseract, cv2
 import numpy as np
 from PIL import Image
 
