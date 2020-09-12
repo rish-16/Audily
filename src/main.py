@@ -1,7 +1,7 @@
 from flask import Flask, Response, request
 from flask import send_file
 
-import gtts, pytesseract, cv2
+import os, gtts, pytesseract, cv2
 import numpy as np
 from PIL import Image
 
@@ -21,6 +21,7 @@ def audify():
     random_id = "".join([str(np.random.randint(0, 9)) for i in range(8)])
     tts = gtts.gTTS(full_text) # TTS
     
+    os.mkdir("all_recordings")
     path_to_file = "./all_recordings/recording_{}.mp3".format(random_id)
     tts.save(path_to_file)
     
